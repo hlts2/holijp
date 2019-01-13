@@ -24,12 +24,13 @@ var rootCmd = &cobra.Command{
 		table.SetHeader([]string{"Year", "Month", "Day", "Week", "Name"})
 
 		for _, holiday := range holidays {
+			week, name := weekAndName(holiday)
 			table.Append([]string{
 				strconv.Itoa(holiday.Year()),
 				strconv.Itoa(holiday.Month()),
 				strconv.Itoa(holiday.Day()),
-				holiday.Week(),
-				holiday.Name(),
+				week,
+				name,
 			})
 		}
 
@@ -41,12 +42,23 @@ var (
 	year  int
 	month int
 	day   int
+	mode  string
 )
 
 func init() {
 	rootCmd.PersistentFlags().IntVarP(&year, "year", "y", -1, "set year")
 	rootCmd.PersistentFlags().IntVarP(&month, "month", "m", -1, "set year")
 	rootCmd.PersistentFlags().IntVarP(&day, "day", "d", -1, "set year")
+	rootCmd.PersistentFlags().StringVar(&mode, "mode", "ja", "set mode(ja, en)")
+}
+
+func weekAndName(h goliday.Holiday) (string, string) {
+	switch mode {
+	case "ja":
+		return h.Week(), h.Name()
+	default:
+		return h.WeekEn(), h.NameEn()
+	}
 }
 
 // Execute executes holijp application.
