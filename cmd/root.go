@@ -3,8 +3,10 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strconv"
 
 	goliday "github.com/hlts2/goliday_jp"
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
 
@@ -18,7 +20,20 @@ var rootCmd = &cobra.Command{
 			goliday.WithDay(day),
 		)
 
-		fmt.Println(holidays)
+		table := tablewriter.NewWriter(os.Stdout)
+		table.SetHeader([]string{"Year", "Month", "Day", "Week", "Name"})
+
+		for _, holiday := range holidays {
+			table.Append([]string{
+				strconv.Itoa(holiday.Year()),
+				strconv.Itoa(holiday.Month()),
+				strconv.Itoa(holiday.Day()),
+				holiday.Week(),
+				holiday.Name(),
+			})
+		}
+
+		table.Render()
 	},
 }
 
