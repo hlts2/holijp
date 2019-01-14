@@ -1,5 +1,5 @@
 # holijp
-CLI for Japanese holiday
+CLI tool for Japanese holiday
 
 ## Installation
 
