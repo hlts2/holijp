@@ -47,8 +47,8 @@ var (
 
 func init() {
 	rootCmd.PersistentFlags().IntVarP(&year, "year", "y", -1, "set year")
-	rootCmd.PersistentFlags().IntVarP(&month, "month", "m", -1, "set year")
-	rootCmd.PersistentFlags().IntVarP(&day, "day", "d", -1, "set year")
+	rootCmd.PersistentFlags().IntVarP(&month, "month", "m", -1, "set month")
+	rootCmd.PersistentFlags().IntVarP(&day, "day", "d", -1, "set day")
 	rootCmd.PersistentFlags().StringVar(&mode, "mode", "ja", "set mode(ja, en)")
 }
 
