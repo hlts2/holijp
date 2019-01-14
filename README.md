@@ -27,7 +27,7 @@ Flags:
 ## Example
 ## Japanese Mode
 
-List of holidays in 2019 and 11th day in Japanese.
+List of holidays in 2019 and 11th in Japanese.
 ```
 $ holijp -y 2019 -d 11
 +------+-------+-----+------+--------------+
