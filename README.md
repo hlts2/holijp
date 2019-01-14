@@ -17,12 +17,11 @@ Usage:
   holijp [flags]
 
 Flags:
-  -d, --day int       set year (default -1)
+  -d, --day int       set day (default -1)
   -h, --help          help for holijp
       --mode string   set mode(ja, en) (default "ja")
-  -m, --month int     set year (default -1)
+  -m, --month int     set month (default -1)
   -y, --year int      set year (default -1)
-
 ```
 
 ## Example
