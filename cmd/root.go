@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	goliday "github.com/hlts2/goliday_jp"
+	"github.com/hlts2/goliday"
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
